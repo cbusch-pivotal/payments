@@ -1,0 +1,54 @@
+<div ng-controller="PaymentListController">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10">
+				<h2 style="color:#01786E">Payments</h2>
+				<hr/>
+			</div>
+		</div>
+		<div class="row" ng-show="message">
+			<div class="col-md-10">
+				<div class="alert alert-info" role="alert">{{message}}</div>
+			</div>
+		</div>
+		<div class="row" ng-show="error">
+			<div class="col-md-10">
+				<div class="alert alert-danger" role="alert">{{error}}</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-10">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Card Number</th>
+							<th>CVC</th>
+							<th>Expiration Date</th>
+							<th>Amount</th>
+							<th>Description</th>
+							<th>Status</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- Display each entry in a row -->
+						<tr ng-repeat="payment in payments">
+							<td>{{payment.cardNumber}}</td>
+							<td>{{payment.cvc}}</td>
+							<td>{{payment.expirationMonth}}/{{payment.expirationYear}}</td>
+							<td>{{payment.amount}}</td>
+							<td>{{payment.description}}</td>
+							<td>{{payment.status}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-10">
+				<div class="well">
+					<a href="#/payment" class="btn btn-success">New Payment</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,26 @@
+---
+spring:
+  application:
+    name: PAYMENTS
+server:
+  port: ${vcap.application.port:8080}
+zuul:
+  routes:
+    payment:
+      path: /payment/**
+      serviceId: PAYMENT-SERVICE
+      stripPrefix: false
+    payments:
+      path: /payments/**
+      serviceId: PAYMENT-HISTORY-SERVICE
+      stripPrefix: false
+    kill-payment:
+      path: /payment/kill
+      serviceId: PAYMENT-SERVICE
+    kill-payments:
+      path: /payments/kill
+      serviceId: PAYMENT-HISTORY-SERVICE
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

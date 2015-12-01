@@ -1,0 +1,72 @@
+<div ng-controller="PaymentController">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10">
+				<h2 style="color:#01786E">New Payment</h2>
+				<hr/>
+			</div>
+		</div>	
+		<div class="row" ng-show="message">
+			<div class="col-md-10">
+				<div class="alert alert-info" role="alert">{{message}}</div>
+			</div>
+		</div>
+		<div class="row" ng-show="error">
+			<div class="col-md-10">
+				<div class="alert alert-danger" role="alert">{{error}}</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-10">
+				<form>
+					<div class="form-group">
+						<label for="cardNumber">Credit Card Number:</label>
+						<input type="text" id="cardNumber" class="form-control" ng-model="payment.cardNumber" placeholder="Card Number" required="required" maxlength="20" ng-trim="false" />
+						<a href="https://www.simplify.com/commerce/docs/tutorial/index#testing" target="_blank"><i>Test card list</i></a>
+					</div>
+					<div class="form-group">
+						<label for="cvc">CVC:</label>
+						<input type="text" id="cvc" class="form-control" ng-model="payment.cvc"  placeholder="CVC" required="required" maxlength="5"/>
+					</div>
+					<div class="form-group">
+						<label for="expirationDate">Expiration Date:</label>
+						<select class="form-control" id="expirationMonth" ng-model="payment.expirationMonth">
+							<option value="1">Jan</option>
+							<option value="2">Feb</option>
+							<option value="3">Mar</option>
+							<option value="4">Apr</option>
+							<option value="5">May</option>
+							<option value="6">Jun</option>
+							<option value="7">Jul</option>
+							<option value="8">Aug</option>
+							<option value="9">Sep</option>
+							<option value="10">Oct</option>
+							<option value="11">Nov</option>
+							<option value="12">Dec</option>
+						</select>
+						<select class="form-control" id="expirationYear" ng-model="payment.expirationYear">
+							<option value="15">2015</option>
+							<option value="16">2016</option>
+							<option value="17">2017</option>
+							<option value="18">2018</option>
+							<option value="19">2019</option>
+							<option value="20">2020</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="amount">Amount ($):</label>
+						<input type="number" min="0.01" step="0.01" max="50000.00" id="amount" class="form-control" ng-model="payment.amount"  placeholder="Amount" required="required"/>
+					</div>
+					<div class="form-group">
+						<label for="description">Description:</label>
+						<input type="text" id="description" class="form-control" ng-model="payment.description"  placeholder="Description" required="required"/>
+					</div>
+					<div class="well">
+						<input type="submit" ng-click="update(payment)" class="btn btn-primary" value="Submit Payment"/>
+						<input type="button" ng-click="reset()" class="btn btn-warning" value="Reset"/>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

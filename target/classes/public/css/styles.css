@@ -1,0 +1,9 @@
+.mcbgimage {
+	background-image: url('../images/MasterCard.png');
+	background-repeat: no-repeat;
+	background-position: center right;
+	background-size: initial;
+	background-color: #01786E;
+	color: white;
+	height: 125px;
+}
