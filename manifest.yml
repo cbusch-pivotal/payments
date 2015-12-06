@@ -4,8 +4,8 @@ applications:
   memory: 512M
   disk_quota: 512M
   instances: 1
-  host: payments-mc
+  host: payments
   path: target/api-gateway-0.0.1-SNAPSHOT.jar
   buildpack: java_buildpack
   env:
-    EUREKA_SERVER: http://payment-eureka-server-mc.pcf1.fe.gopivotal.com/eureka/
+    EUREKA_SERVER: http://payment-eureka-server.pcf1.fe.gopivotal.com/eureka/
