@@ -3,7 +3,8 @@
 	background-repeat: no-repeat;
 	background-position: center right;
 	background-size: initial;
-	background-color: #01786E;
+	/*background-color: #01786E;*/
+	background-color: blue;
 	color: white;
 	height: 125px;
 }
